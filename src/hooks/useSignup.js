@@ -10,7 +10,7 @@ import { doc, setDoc } from "firebase/firestore";
 export const useSignup = () => {
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
-  const [isCancelled, setIsCancelled] = useState(false);
+  const [isCancelled] = useState(false);
 
   const { dispatch } = useAuthContext();
 

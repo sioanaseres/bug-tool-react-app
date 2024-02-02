@@ -1,50 +1,55 @@
-import React , {useState} from 'react'
-import {useLogin} from "../hooks/useLogin"
-import "./Login.css"
-
+import React, { useState } from "react";
+import { useLogin } from "../hooks/useLogin";
+import "./Login.css";
 
 const Login = () => {
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const {login, error, isPending} = useLogin()
+  const { login, isPending } = useLogin();
 
-  const handleSubmit = (e) =>{
-    e.preventDefault()
-    login(email, password)
-  
-  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    login(email, password);
+  };
   return (
-    <form className='form' onSubmit={handleSubmit}>
-    <h2>Login</h2>
-      <label >
+    <form className="form" onSubmit={handleSubmit}>
+      <h2>Login</h2>
+      <label>
         <span>Email:</span>
-        <input type="email" 
-        required
-        onChange={(e)=>setEmail(e.target.value)}
-        value={email}
+        <input
+          type="email"
+          required
+          onChange={(e) => setEmail(e.target.value)}
+          value={email}
         />
       </label>
-      <label >
+      <label>
         <span>Password:</span>
-        <input type="password" 
-        required
-         onChange={(e)=>setPassword(e.target.value)}
-         value={password}/>
+        <input
+          type="password"
+          required
+          onChange={(e) => setPassword(e.target.value)}
+          value={password}
+        />
       </label>
-      {!isPending &&  <button className='btn btn-form'>
+      {!isPending && (
+        <button className="btn btn-form">
           <span className="transition"></span>
           <span className="gradient"></span>
           <span className="label">Login</span>
-        </button>}
-      {isPending &&  <button className='btn btn-form' disabled>
+        </button>
+      )}
+      {isPending && (
+        <button className="btn btn-form" disabled>
           <span className="transition"></span>
           <span className="gradient"></span>
           <span className="label">Loading</span>
-      </button>}
+        </button>
+      )}
       {/* {error && <p className='error'>{error}</p>} */}
-   </form>
-  )
-}
+    </form>
+  );
+};
 
-export default Login
+export default Login;

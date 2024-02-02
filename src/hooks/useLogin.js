@@ -6,7 +6,7 @@ import { doc, updateDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
 
 export const useLogin = () => {
-  const [isCancelled, setIsCancelled] = useState(false);
+  const [isCancelled] = useState(false);
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
 

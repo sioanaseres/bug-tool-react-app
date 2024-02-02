@@ -5,7 +5,7 @@ import { signOut } from "firebase/auth";
 import { doc, updateDoc } from "firebase/firestore";
 
 export const useLogout = () => {
-  const [isCancelled, setIsCancelled] = useState(false);
+  const [isCancelled] = useState(false);
   const [error, setError] = useState(null);
   const [isPending, setIsPending] = useState(false);
 

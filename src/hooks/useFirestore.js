@@ -60,7 +60,7 @@ const firestoreReducer = (state, action) => {
 };
 export const useFirestore = (c) => {
   const [response, dispatch] = useReducer(firestoreReducer, initialState);
-  const [isCancelled, setIsCancelled] = useState(false);
+  const [isCancelled] = useState(false);
 
   // collection ref
   const ref = collection(db, c);
